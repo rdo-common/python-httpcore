@@ -3,7 +3,7 @@
 %{?python_disable_dependency_generator}
 
 Name:           python-%{pypi_name}
-Version:        0.12.0
+Version:        0.12.1
 Release:        1%{?dist}
 Summary:        Minimal low-level HTTP client
 
@@ -27,7 +27,6 @@ BuildRequires:  python3-setuptools
 Requires:       (python3dist(h11) >= 0.8 with python3dist(h11) < 0.10)
 Requires:       (python3dist(h2) >= 3 with python3dist(h2) < 4)
 Requires:       (python3dist(sniffio) >= 1 with python3dist(sniffio) < 2)
-
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
 %description -n python3-%{pypi_name}
@@ -53,6 +52,9 @@ rm -rf %{pypi_name}.egg-info
 %{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
 
 %changelog
+* Sun Nov 08 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.12.1-1
+- Update to latest upstream release 0.12.1 (#1895584)
+
 * Fri Oct  9 16:39:18 -03 2020 Itamar Reis Peixoto <itamar@ispbrasil.com.br> - 0.12.0-1
 - Update to latest upstream release 0.12.0
 
