@@ -47,8 +47,8 @@ rm -rf %{pypi_name}.egg-info
 
 %changelog
 * Mon Nov 23 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.12.2-1
-- Enable dependency generator
-- Update to latest upstream release 0.12.2
+- Enable dependency generator (#1897850)
+- Update to latest upstream release 0.12.2 (#1895584)
 
 * Sun Nov 08 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.12.1-1
 - Update to latest upstream release 0.12.1 (#1895584)
