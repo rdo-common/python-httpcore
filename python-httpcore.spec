@@ -1,8 +1,10 @@
 %global pypi_name httpcore
+# Dependency generator is having problems with the given requirements
+%{?python_disable_dependency_generator}
 
 Name:           python-%{pypi_name}
 Version:        0.12.2
-Release:        1%{?dist}
+Release:        1.1%{?dist}
 Summary:        Minimal low-level HTTP client
 
 License:        BSD
@@ -21,6 +23,10 @@ Summary:        %{summary}
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
+
+Requires:       (python3dist(h11) >= 0.8 with python3dist(h11) < 0.10)
+Requires:       (python3dist(h2) >= 3 with python3dist(h2) < 5)
+Requires:       (python3dist(sniffio) >= 1 with python3dist(sniffio) < 2)
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
 %description -n python3-%{pypi_name}
@@ -46,6 +52,10 @@ rm -rf %{pypi_name}.egg-info
 %{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
 
 %changelog
+* Tue Jan 26 2021 Joel Capitao <jcapitao@redhat.com> - 0.12.2-1.1
+- Disable dependency generator
+- Add deps explicitly
+
 * Mon Nov 23 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.12.2-1
 - Enable dependency generator (#1897850)
 - Update to latest upstream release 0.12.2 (#1895584)
