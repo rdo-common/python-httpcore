@@ -4,7 +4,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.12.2
-Release:        1.1%{?dist}
+Release:        1.2%{?dist}
 Summary:        Minimal low-level HTTP client
 
 License:        BSD
@@ -24,7 +24,7 @@ Summary:        %{summary}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 
-Requires:       (python3dist(h11) >= 0.8 with python3dist(h11) < 0.10)
+Requires:       (python3dist(h11) >= 0.8 with python3dist(h11) < 1)
 Requires:       (python3dist(h2) >= 3 with python3dist(h2) < 5)
 Requires:       (python3dist(sniffio) >= 1 with python3dist(sniffio) < 2)
 %{?python_provide:%python_provide python3-%{pypi_name}}
@@ -52,6 +52,9 @@ rm -rf %{pypi_name}.egg-info
 %{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
 
 %changelog
+* Fri Mar 12 2021 Joel Capitao <jcapitao@redhat.com> - 0.12.2-1.2
+- Requires newer h11
+
 * Tue Jan 26 2021 Joel Capitao <jcapitao@redhat.com> - 0.12.2-1.1
 - Disable dependency generator
 - Add deps explicitly
